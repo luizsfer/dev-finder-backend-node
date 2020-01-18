@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
-const cors = require('./routes')
+const cors = require('./cors')
 require('dotenv').config()
 
 
@@ -24,4 +24,4 @@ app.use(routes);
 
 // MongoDB (Não-relacional)
 
-app.listen(process.env.PORT || 3002);
+app.listen(process.env.PORT || 3000);
