@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGODB_CONN, {
     useUnifiedTopology: true
 })
 
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 // Métodos HTTP: get, post, put, delete
@@ -24,4 +24,4 @@ app.use(routes);
 
 // MongoDB (Não-relacional)
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3002);
