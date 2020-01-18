@@ -1,7 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const routes = require('./routes')
+const routes = require('./routes');
+const cors = require('./routes')
 require('dotenv').config()
+
 
 const app = express();
 console.log('Hello')
@@ -11,8 +13,9 @@ mongoose.connect(process.env.MONGODB_CONN, {
     useUnifiedTopology: true
 })
 
-app.use(express.json())
-app.use(routes)
+app.use(cors);
+app.use(express.json());
+app.use(routes);
 // Métodos HTTP: get, post, put, delete
 // Tipos de parâmetros:
 // Query Params: req.query (Filtros, ordenação, paginação, ...)
